@@ -41,27 +41,38 @@ const Contact = () => {
       return
     }
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
-    if (!serviceId || !templateId || !publicKey) {
-      setStatus({ type: 'error', message: 'Email service is not configured. Please set EmailJS environment variables.' })
-      return
-    }
-
     try {
       setIsSubmitting(true)
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
-        },
-        publicKey
-      )
+      const useServer = process.env.NEXT_PUBLIC_USE_SERVER_MAIL === 'true'
+
+      if (useServer) {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: form.name, email: form.email, message: form.message })
+        })
+        if (!res.ok) throw new Error('Server mail failed')
+      } else {
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+        if (!serviceId || !templateId || !publicKey) {
+          throw new Error('EmailJS not configured')
+        }
+
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: form.name,
+            from_email: form.email,
+            message: form.message,
+          },
+          publicKey
+        )
+      }
+
       setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' })
       setForm({ name: '', email: '', message: '' })
     } catch (err) {
