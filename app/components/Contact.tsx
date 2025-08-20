@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
-import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const contactInfo = [
@@ -24,62 +23,22 @@ const Contact = () => {
   ]
 
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' })
+  const contactEmail = 'abhiswant0324@gmail.com'
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target
     setForm((prev) => ({ ...prev, [id]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setStatus({ type: null, message: '' })
 
-    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      setStatus({ type: 'error', message: 'Please fill out all fields.' })
-      return
-    }
+    const subject = `Portfolio Contact: ${form.name}`
+    const body = `Name: ${form.name}%0D%0AEmail: ${form.email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(form.message)}`
+    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${body}`
+    window.location.href = mailto
 
-    try {
-      setIsSubmitting(true)
-      const useServer = process.env.NEXT_PUBLIC_USE_SERVER_MAIL === 'true'
-
-      if (useServer) {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: form.name, email: form.email, message: form.message })
-        })
-        if (!res.ok) throw new Error('Server mail failed')
-      } else {
-        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
-        if (!serviceId || !templateId || !publicKey) {
-          throw new Error('EmailJS not configured')
-        }
-
-        await emailjs.send(
-          serviceId,
-          templateId,
-          {
-            from_name: form.name,
-            from_email: form.email,
-            message: form.message,
-          },
-          publicKey
-        )
-      }
-
-      setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' })
-      setForm({ name: '', email: '', message: '' })
-    } catch (err) {
-      setStatus({ type: 'error', message: 'Failed to send the message. Please try again later.' })
-    } finally {
-      setIsSubmitting(false)
-    }
+    // Do not clear form so users can retry if mail client didn't open
   }
 
   return (
@@ -196,17 +155,11 @@ const Contact = () => {
                     required
                   ></textarea>
                 </div>
-                {status.type && (
-                  <p className={`text-sm ${status.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
-                    {status.message}
-                  </p>
-                )}
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-300"
                 >
-                  {isSubmitting ? 'Sending…' : 'Send Message'}
+                  Send Message
                 </button>
               </form>
             </div>
