@@ -1,8 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const contactInfo = [
@@ -21,6 +22,54 @@ const Contact = () => {
       color: 'from-gray-700 to-gray-900'
     }
   ]
+
+  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target
+    setForm((prev) => ({ ...prev, [id]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setStatus({ type: null, message: '' })
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setStatus({ type: 'error', message: 'Please fill out all fields.' })
+      return
+    }
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus({ type: 'error', message: 'Email service is not configured. Please set EmailJS environment variables.' })
+      return
+    }
+
+    try {
+      setIsSubmitting(true)
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        publicKey
+      )
+      setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' })
+      setForm({ name: '', email: '', message: '' })
+    } catch (err) {
+      setStatus({ type: 'error', message: 'Failed to send the message. Please try again later.' })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
@@ -93,7 +142,7 @@ const Contact = () => {
               Send Me a Message
             </h3>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Name
@@ -103,6 +152,9 @@ const Contact = () => {
                     id="name"
                     className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Your name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
                 <div>
@@ -114,6 +166,9 @@ const Contact = () => {
                     id="email"
                     className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Your email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
                 <div>
@@ -125,13 +180,22 @@ const Contact = () => {
                     rows={4}
                     className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
                     placeholder="Your message"
+                    value={form.message}
+                    onChange={handleChange}
+                    required
                   ></textarea>
                 </div>
+                {status.type && (
+                  <p className={`text-sm ${status.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+                    {status.message}
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-300"
+                  disabled={isSubmitting}
+                  className="w-full px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending…' : 'Send Message'}
                 </button>
               </form>
             </div>

@@ -8,14 +8,14 @@ const About = () => {
     {
       school: 'Indian Institute of Information Technology, Agartala',
       degree: 'Bachelor of Technology in Computer Science and Engineering',
-      period: '2023 – 2027',
-      details: 'CGPA: 8.87'
+      period: 'Aug 2023 – May 2027',
+      details: 'CGPA: 8.97'
     },
     {
       school: 'Shri Ram Public School, Basti',
       degree: 'Senior Secondary (XII)',
-      period: '2021 – 2022',
-      details: 'Percentage: 90'
+      period: 'Jun 2021 – Apr 2022',
+      details: 'Percentage: 90%'
     },
     {
       school: 'Shri Ram Public School, Basti',

@@ -56,7 +56,7 @@ const Hero = () => {
               <FaGithub className="w-8 h-8" />
             </a>
             <a
-              href="https://linkedin.com/in/abhiswant-chaudhary"
+              href="https://www.linkedin.com/in/abhiswant-chaudhary-a09253277"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors transform hover:scale-110 duration-300"

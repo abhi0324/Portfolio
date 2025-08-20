@@ -7,6 +7,33 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 const Projects = () => {
   const projects = [
     {
+      title: 'JudgeX - Online Coding Platform',
+      description: 'Full-stack online judge with real-time code execution for C++, Python, and Java in secure Docker sandboxes. Includes problem management, submissions, leaderboard, and AI-assisted code review.',
+      features: [
+        'Secure, sandboxed code execution with automated cleanup and error handling',
+        'Monaco Editor integration, problem dashboard, submissions and leaderboard',
+        '15+ REST APIs with JWT auth for user, problems, and evaluation',
+        'Integrated Google Gemini API for automated feedback and review'
+      ],
+      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Docker', 'JWT', 'Monaco Editor', 'Google Gemini API', 'AWS EC2'],
+      github: null,
+      live: null,
+      color: 'from-indigo-500 to-indigo-600'
+    },
+    {
+      title: 'File Sharing Web Application',
+      description: 'Full-stack file sharing platform with secure uploads/downloads via unique, shareable links and automatic ID generation for each file.',
+      features: [
+        'Optimized multipart upload APIs using Express.js and Multer, reducing file I/O latency by ~30%',
+        'Frontend built with React, Axios, and Vite using MVC structure, improving build time by ~40% over Webpack',
+        'Validated across 50+ upload/download sessions'
+      ],
+      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Multer', 'Axios', 'Vite', 'REST APIs'],
+      github: null,
+      live: null,
+      color: 'from-teal-500 to-teal-600'
+    },
+    {
       title: 'ChromaDraw 1.0',
       description: 'A real-time color tracking application using OpenCV, enabling users to draw using color-detecting objects via webcam. Features HSV-based color segmentation with adjustable trackbars and optimized performance.',
       features: [
@@ -103,15 +130,17 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
-                  >
-                    <FaGithub className="w-5 h-5" />
-                    <span>Code</span>
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors"
+                    >
+                      <FaGithub className="w-5 h-5" />
+                      <span>Code</span>
+                    </a>
+                  )}
                   {project.live && (
                     <a
                       href={project.live}

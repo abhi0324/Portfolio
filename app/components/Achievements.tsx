@@ -24,21 +24,21 @@ const Achievements = () => {
       items: [
         {
           title: 'Codeforces',
-          details: 'Specialist (1435) rated and solved 650+ problems',
+          details: 'Specialist (1435) rated and solved 700+ problems',
           profile: 'abhi_0324',
           icon: <FaCode className="w-6 h-6" />,
           color: 'from-blue-500 to-blue-600'
         },
         {
           title: 'CodeChef',
-          details: '3 star (1665) rated and solved 300+ problems',
+          details: '3 star (1665) rated and solved 200+ problems',
           profile: 'abhi0324',
           icon: <FaStar className="w-6 h-6" />,
           color: 'from-red-500 to-red-600'
         },
         {
           title: 'Leetcode',
-          details: '1799 rated (Top 8.88 %). and solved 400+ problems',
+          details: '1800 rated (Top 8.88%) and solved 550+ problems',
           profile: 'abhi_0324',
           icon: <FaCode className="w-6 h-6" />,
           color: 'from-yellow-500 to-yellow-600'
@@ -63,15 +63,26 @@ const Achievements = () => {
         {
           title: 'Notable Contest Rankings',
           details: [
-            'Rank 97 in STARTERS142 (CodeChef div. 3)',
-            'Rank 103 in STARTERS155 (CodeChef div. 2)',
-            'Rank 595/16837 in CodeRush 2023 by Newton School',
-            'Rank 1268/1.4L in CodeKaze\'24 by Coding Ninjas',
-            'Rank 1777 in Codeforces Round 1008(div. 2)',
-            'Rank 2536 in Meta Hacker Cup 2024 Round 1 and 3636 in Round 2'
+            '97 in STARTERS142 (CodeChef, Div 3)',
+            '103 in STARTERS155 (CodeChef, Div 2)',
+            '595/16837 in CodeRush 2023 (Newton School)',
+            '1268/1.4L in CodeKaze\'24 (Coding Ninjas)',
+            '1777 in Codeforces Round 1008 (Div 2)',
+            '2536 in Meta Hacker Cup 2024 Round 1; 3636 in Round 2'
           ],
           icon: <FaAward className="w-6 h-6" />,
           color: 'from-yellow-700 to-yellow-800'
+        }
+      ]
+    },
+    {
+      category: 'Open Source',
+      items: [
+        {
+          title: 'CNCF Projects',
+          details: 'Contributed 7+ merged pull requests across CNCF projects (including OpenKruise).',
+          icon: <FaCode className="w-6 h-6" />,
+          color: 'from-green-600 to-emerald-700'
         }
       ]
     }

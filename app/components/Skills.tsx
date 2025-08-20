@@ -10,31 +10,31 @@ const Skills = () => {
     {
       title: 'Programming Languages',
       icon: <FaCode className="w-6 h-6" />,
-      skills: ['C++', 'Python', 'JavaScript', 'TypeScript', 'Java', 'Go'],
+      skills: ['C++', 'C', 'Python', 'JavaScript', 'HTML', 'CSS', 'SQL'],
       color: 'from-blue-500 to-blue-600'
     },
     {
       title: 'Web Development',
       icon: <FaServer className="w-6 h-6" />,
-      skills: ['React', 'Next.js', 'Node.js', 'Express', 'Tailwind CSS'],
+      skills: ['React.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'Next.js'],
       color: 'from-purple-500 to-purple-600'
     },
     {
       title: 'Database',
       icon: <FaDatabase className="w-6 h-6" />,
-      skills: ['MongoDB', 'MySQL', 'PostgreSQL', 'Redis'],
+      skills: ['MongoDB', 'Mongoose', 'MySQL'],
       color: 'from-green-500 to-green-600'
     },
     {
       title: 'Tools & Technologies',
       icon: <FaTools className="w-6 h-6" />,
-      skills: ['Git', 'Docker', 'Kubernetes', 'AWS', 'Linux', 'VS Code'],
+      skills: ['Git', 'GitHub', 'Docker', 'AWS', 'Kubernetes', 'Postman', 'Linux', 'VS Code', 'Shell Scripting', 'Markdown'],
       color: 'from-red-500 to-red-600'
     },
     {
       title: 'Competitive Programming',
       icon: <FaCodeBranch className="w-6 h-6" />,
-      skills: ['Data Structures', 'Algorithms', 'Problem Solving', 'Dynamic Programming'],
+      skills: ['Data Structures', 'Algorithms', 'Problem Solving', 'Dynamic Programming', 'OOP', 'DBMS', 'Operating Systems', 'Computer Networks'],
       color: 'from-yellow-500 to-yellow-600'
     }
   ]
@@ -60,7 +60,7 @@ const Skills = () => {
       platform: 'LeetCode',
       icon: <SiLeetcode className="w-8 h-8" />,
       username: 'abhi_0324',
-      rating: '500+ Problems',
+      rating: '550+ Problems (1800)',
       link: 'https://leetcode.com/abhi_0324',
       color: 'from-yellow-500 to-yellow-600'
     },
