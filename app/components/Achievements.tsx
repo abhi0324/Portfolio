@@ -23,22 +23,28 @@ const Achievements = () => {
       category: 'Competitive Programming',
       items: [
         {
-          title: 'Codeforces',
-          details: 'Specialist (1435) rated and solved 700+ problems',
+          title: 'ICPC Regionalist (2025)',
+          details: 'Qualified for ICPC Amritapuri Regionals, ranking in the top performing teams nationwide.',
+          icon: <FaTrophy className="w-6 h-6" />,
+          color: 'from-amber-500 to-amber-600'
+        },
+        {
+          title: 'Codeforces Specialist',
+          details: 'Specialist rated (1435) in Codeforces competitive programming contests.',
           profile: 'abhi_0324',
           icon: <FaCode className="w-6 h-6" />,
           color: 'from-blue-500 to-blue-600'
         },
         {
-          title: 'CodeChef',
-          details: '3 star (1665) rated and solved 200+ problems',
+          title: 'CodeChef 3★',
+          details: '3 star rated (1665) in CodeChef competitive programming contests.',
           profile: 'abhi0324',
           icon: <FaStar className="w-6 h-6" />,
           color: 'from-red-500 to-red-600'
         },
         {
-          title: 'Leetcode',
-          details: '1800 rated (Top 8.88%) and solved 550+ problems',
+          title: 'LeetCode Knight',
+          details: 'Knight badge holder rated 1895 on LeetCode.',
           profile: 'abhi_0324',
           icon: <FaCode className="w-6 h-6" />,
           color: 'from-yellow-500 to-yellow-600'
@@ -46,32 +52,37 @@ const Achievements = () => {
       ]
     },
     {
-      category: 'Competitions & Awards',
+      category: 'Competitions & Hackathons',
       items: [
         {
+          title: 'Engineers\' Ring of Honor 2025',
+          details: 'Secured All India Rank 1 (AIR 1) among thousands of participants; awarded Rs. 20,000 cash prize by Naukri Campus.',
+          icon: <FaMedal className="w-6 h-6" />,
+          color: 'from-purple-500 to-purple-600'
+        },
+        {
+          title: 'Flipkart GRiD 7.0 (2025)',
+          details: 'National Semi-Finalist in Flipkart GRiD 7.0 flagship engineering competition.',
+          icon: <FaTrophy className="w-6 h-6" />,
+          color: 'from-blue-600 to-indigo-600'
+        },
+        {
+          title: 'Adobe India Hackathon 2025',
+          details: 'Advanced to Round 2, placing in the top 1.5% out of 260,000+ participants nationwide.',
+          icon: <FaAward className="w-6 h-6" />,
+          color: 'from-red-600 to-pink-600'
+        },
+        {
+          title: 'Innovate-A-Thon 3.0 (BIT Mesra)',
+          details: 'Finalist in East India\'s biggest Web3 hackathon (2025).',
+          icon: <FaAward className="w-6 h-6" />,
+          color: 'from-cyan-500 to-teal-600'
+        },
+        {
           title: 'AlgoScholar\'24',
-          details: 'Selected among top 70 out of 20,000+ applicants after clearing two coding rounds and one personal interview, receiving a scholarship worth 1 lakh from AlgoUniversity.',
+          details: 'Selected among top 70 out of 100,000+ applicants, receiving a scholarship worth Rs. 1,00,000 by AlgoUniversity.',
           icon: <FaTrophy className="w-6 h-6" />,
           color: 'from-yellow-500 to-yellow-600'
-        },
-        {
-          title: 'Engineers\' Ring of Honor 2025',
-          details: 'Secured AIR 112 and College Rank 2 out of thousands of participants; awarded Rs. 15,000 prize by Naukri Campus.',
-          icon: <FaMedal className="w-6 h-6" />,
-          color: 'from-gray-400 to-gray-500'
-        },
-        {
-          title: 'Notable Contest Rankings',
-          details: [
-            '97 in STARTERS142 (CodeChef, Div 3)',
-            '103 in STARTERS155 (CodeChef, Div 2)',
-            '595/16837 in CodeRush 2023 (Newton School)',
-            '1268/1.4L in CodeKaze\'24 (Coding Ninjas)',
-            '1777 in Codeforces Round 1008 (Div 2)',
-            '2536 in Meta Hacker Cup 2024 Round 1; 3636 in Round 2'
-          ],
-          icon: <FaAward className="w-6 h-6" />,
-          color: 'from-yellow-700 to-yellow-800'
         }
       ]
     },
@@ -79,8 +90,8 @@ const Achievements = () => {
       category: 'Open Source',
       items: [
         {
-          title: 'CNCF Projects',
-          details: 'Contributed 7+ merged pull requests across CNCF projects (including OpenKruise).',
+          title: 'Open Source Contribution',
+          details: 'Merged 20+ pull requests across Cloud Native Computing Foundation (CNCF) and other open-source projects.',
           icon: <FaCode className="w-6 h-6" />,
           color: 'from-green-600 to-emerald-700'
         }

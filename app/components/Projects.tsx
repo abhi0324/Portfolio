@@ -7,30 +7,28 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 const Projects = () => {
   const projects = [
     {
-      title: 'JudgeX - Online Coding Platform',
-      description: 'Full-stack online judge with real-time code execution for C++, Python, and Java in secure Docker sandboxes. Includes problem management, submissions, leaderboard, and AI-assisted code review.',
+      title: 'JudgeX',
+      description: 'Secure, sandboxed online judge platform deployed on AWS EC2 with real-time code execution, RESTful backend, and responsive React frontend.',
       features: [
-        'Secure, sandboxed code execution with automated cleanup and error handling',
-        'Monaco Editor integration, problem dashboard, submissions and leaderboard',
-        '15+ REST APIs with JWT auth for user, problems, and evaluation',
-        'Integrated Google Gemini API for automated feedback and review'
+        'Architected a secure, sandboxed online judge platform deployed on AWS EC2, leveraging Docker to containerize real-time C++, Python, and Java execution, reducing average latency by 35%.',
+        'Engineered a RESTful API backend using Node.js, Express.js, and MongoDB with JWT authentication, integrating Google Gemini API for automated code reviews that reduced defect rates by 15%.',
+        'Developed a responsive React frontend integrated with Monaco Editor, featuring a problem management dashboard, submission tracking, and real-time leaderboards, boosting user session duration by 40%.'
       ],
-      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Docker', 'JWT', 'Monaco Editor', 'Google Gemini API', 'AWS EC2'],
-      github: null,
-      live: null,
+      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Docker', 'AWS EC2', 'Monaco Editor', 'Google Gemini API', 'JWT'],
+      github: 'https://github.com/abhi0324/Online-Judge',
+      live: 'https://judgex.vercel.app/',
       color: 'from-indigo-500 to-indigo-600'
     },
     {
-      title: 'File Sharing Web Application',
-      description: 'Full-stack file sharing platform with secure uploads/downloads via unique, shareable links and automatic ID generation for each file.',
+      title: 'DropVault',
+      description: 'Secure file-sharing service supporting multi-file uploads, automatic file expiration via MongoDB TTL indexes, and interactive React UI with QR-code generation.',
       features: [
-        'Optimized multipart upload APIs using Express.js and Multer, reducing file I/O latency by ~30%',
-        'Frontend built with React, Axios, and Vite using MVC structure, improving build time by ~40% over Webpack',
-        'Validated across 50+ upload/download sessions'
+        'Built a secure file-sharing service with Multer and MongoDB, supporting multi-file uploads with 25MB size limits, file-type validation, and automatic file expiration utilizing MongoDB TTL indexes.',
+        'Designed a performance-optimized React frontend with Vite, featuring drag-and-drop functionality, real-time progress tracking, file previews, and QR-code generation for unique, shareable download links.'
       ],
-      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Multer', 'Axios', 'Vite', 'REST APIs'],
-      github: null,
-      live: null,
+      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Multer', 'Axios', 'Vite'],
+      github: 'https://github.com/abhi0324/DropVault-Secure-File-Sharing-Platform',
+      live: 'https://file-sharing-application-sigma.vercel.app/',
       color: 'from-teal-500 to-teal-600'
     },
     {

@@ -6,15 +6,25 @@ import { motion } from 'framer-motion'
 const Experience = () => {
   const experiences = [
     {
-      role: 'LFX Mentee - Cloud Native Computing Foundation (CNCF)',
-      org: 'OpenKruise · Best Practices for Karmada/OCM Integration',
-      location: 'Remote',
-      period: 'June 2025 – Aug 2025',
+      role: 'Software Development Engineer Intern',
+      org: 'Clappia | No-Code Platform',
+      location: 'Bengaluru, Karnataka',
+      period: 'May 2026 – Aug 2026',
       details: [
-        'Created official technical documentation for integrating OpenKruise advanced workloads (CloneSet, Advanced StatefulSet) with multi-cluster orchestration systems Karmada and Open Cluster Management.',
-        'Defined best practices, documented supported features and current limitations, and improved integration guidelines adopted by 300+ community contributors and users.',
-        'Partnered with CNCF mentors to identify integration issues, contribute potential code fixes, and validate technical accuracy.',
-        'Produced 20+ pages of high-quality Markdown documentation aligned with CNCF open-source contribution and documentation standards.'
+        'Delivered 10+ full-stack features across a microservices architecture for Clappia’s on-premise deployment, achieving feature parity with the AWS cloud platform.',
+        'Architected an on-premises Analytics service from scratch with 20+ REST endpoints backed by Elasticsearch and migrated 25+ legacy Lambda endpoints in the App Definition Service to Express.js, enabling self-serve app design for on-prem customers.',
+        'Engineered real-time infrastructure across 7+ microservices: synchronized Workflow Designer node definitions across MySQL and Kestra for live execution, and implemented a WebSocket-based bulk data export pipeline with live progress tracking across concurrent sessions.',
+        'Strengthened platform security and reliability by shipping Email OTP authentication and encrypted SMTP/credential handling, while automating Docker image cleanup/log rotation; introducing a shared TypeScript config across 3 client apps.'
+      ]
+    },
+    {
+      role: 'LFX Mentee (Open Source Contributor)',
+      org: 'Cloud Native Computing Foundation (CNCF) - OpenKruise',
+      location: 'Remote',
+      period: 'Jun 2025 – Aug 2025',
+      details: [
+        'Authored official documentation for integrating OpenKruise with multi-cluster systems Karmada and Open Cluster Management, reducing setup time by 40% and improving adoption across 300+ users and contributors.',
+        'Collaborated with CNCF mentors to resolve integration issues and contribute optimized code, improving system performance by 25% and accelerating deployment cycles.'
       ]
     }
   ]

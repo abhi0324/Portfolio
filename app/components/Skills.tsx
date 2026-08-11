@@ -8,33 +8,33 @@ import { SiCodeforces, SiCodechef, SiLeetcode, SiGeeksforgeeks, SiLinkedin, SiGi
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Programming Languages',
+      title: 'Languages',
       icon: <FaCode className="w-6 h-6" />,
-      skills: ['C++', 'C', 'Python', 'JavaScript', 'HTML', 'CSS', 'SQL'],
+      skills: ['C++', 'C', 'Python', 'JavaScript', 'TypeScript', 'SQL', 'HTML', 'CSS'],
       color: 'from-blue-500 to-blue-600'
     },
     {
-      title: 'Web Development',
+      title: 'Frameworks & Libraries',
       icon: <FaServer className="w-6 h-6" />,
-      skills: ['React.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'Next.js'],
+      skills: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'C++ STL'],
       color: 'from-purple-500 to-purple-600'
     },
     {
-      title: 'Database',
+      title: 'Database & API',
       icon: <FaDatabase className="w-6 h-6" />,
-      skills: ['MongoDB', 'Mongoose', 'MySQL'],
+      skills: ['MySQL', 'MongoDB', 'Knex', 'REST APIs', 'WebSocket', 'JWT', 'JSON'],
       color: 'from-green-500 to-green-600'
     },
     {
-      title: 'Tools & Technologies',
+      title: 'Tools & DevOps',
       icon: <FaTools className="w-6 h-6" />,
-      skills: ['Git', 'GitHub', 'Docker', 'AWS', 'Kubernetes', 'Postman', 'Linux', 'VS Code', 'Shell Scripting', 'Markdown'],
+      skills: ['Git', 'GitHub', 'Docker', 'AWS', 'Kubernetes', 'Elasticsearch', 'Postman', 'VS Code', 'Linux', 'Shell Scripting'],
       color: 'from-red-500 to-red-600'
     },
     {
-      title: 'Competitive Programming',
+      title: 'Relevant Coursework',
       icon: <FaCodeBranch className="w-6 h-6" />,
-      skills: ['Data Structures', 'Algorithms', 'Problem Solving', 'Dynamic Programming', 'OOP', 'DBMS', 'Operating Systems', 'Computer Networks'],
+      skills: ['Data Structures & Algorithms', 'OOP', 'DBMS', 'Operating Systems', 'Computer Networks'],
       color: 'from-yellow-500 to-yellow-600'
     }
   ]
@@ -44,7 +44,7 @@ const Skills = () => {
       platform: 'Codeforces',
       icon: <SiCodeforces className="w-8 h-8" />,
       username: 'abhi_0324',
-      rating: "Specialist",
+      rating: 'Specialist (1435)',
       link: 'https://codeforces.com/profile/abhi_0324',
       color: 'from-orange-500 to-orange-600'
     },
@@ -52,7 +52,7 @@ const Skills = () => {
       platform: 'CodeChef',
       icon: <SiCodechef className="w-8 h-8" />,
       username: 'abhi0324',
-      rating: '3★',
+      rating: '3★ (1665)',
       link: 'https://www.codechef.com/users/abhi0324',
       color: 'from-red-500 to-red-600'
     },
@@ -60,7 +60,7 @@ const Skills = () => {
       platform: 'LeetCode',
       icon: <SiLeetcode className="w-8 h-8" />,
       username: 'abhi_0324',
-      rating: '550+ Problems (1800)',
+      rating: 'Knight (1895)',
       link: 'https://leetcode.com/abhi_0324',
       color: 'from-yellow-500 to-yellow-600'
     },
@@ -68,8 +68,8 @@ const Skills = () => {
       platform: 'GitHub',
       icon: <SiGithub className="w-8 h-8" />,
       username: 'abhi0324',
-      rating: '10+ Repositories',
-      link: 'https://github.com/abhi0324',
+      rating: '20+ Merged PRs',
+      link: 'https://github.com/pulls?q=is%3Apr+author%3Aabhi0324+is%3Amerged',
       color: 'from-gray-700 to-gray-900'
     },
     {

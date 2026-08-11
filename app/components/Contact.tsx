@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa'
 
 const Contact = () => {
   const contactInfo = [
@@ -19,6 +19,13 @@ const Contact = () => {
       value: 'abhi0324',
       link: 'https://github.com/abhi0324',
       color: 'from-gray-700 to-gray-900'
+    },
+    {
+      icon: <FaTwitter className="w-6 h-6" />,
+      label: 'Twitter / X',
+      value: '@abhiswant',
+      link: 'https://x.com/abhiswant',
+      color: 'from-sky-400 to-blue-500'
     }
   ]
 

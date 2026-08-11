@@ -9,7 +9,7 @@ const About = () => {
       school: 'Indian Institute of Information Technology, Agartala',
       degree: 'Bachelor of Technology in Computer Science and Engineering',
       period: 'Aug 2023 – May 2027',
-      details: 'CGPA: 8.97'
+      details: 'CGPA: 9.10'
     },
     {
       school: 'Shri Ram Public School, Basti',
@@ -27,8 +27,15 @@ const About = () => {
 
   const responsibilities = [
     {
+      role: 'Programming Team Lead, Google Developer Groups, IIIT Agartala',
+      period: 'Aug 2025 – Present',
+      details: [
+        'Led competitive programming initiatives and technical workshops for 200+ students at IIIT Agartala.'
+      ]
+    },
+    {
       role: 'Mentor, Developers and Coders Club (DCC), NIT-A',
-      period: 'Feb 2025 – Present',
+      period: 'Feb 2025 – May 2025',
       details: [
         'Mentored 10+ members, designing personalized DSA roadmaps and improving their problem-solving efficiency.',
         'Led 5+ mentorship sessions on contest strategies, optimization techniques, and problem-solving approaches.'
@@ -36,7 +43,7 @@ const About = () => {
     },
     {
       role: 'Core Member, CODE Club, IIIT-A',
-      period: 'Sep 2024 – Present',
+      period: 'Sep 2024 – July 2025',
       details: [
         'Managed 10+ club activities and organized 5+ events, fostering a dynamic and engaging coding community.'
       ]

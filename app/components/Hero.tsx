@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Hero = () => {
   return (
@@ -62,6 +62,14 @@ const Hero = () => {
               className="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors transform hover:scale-110 duration-300"
             >
               <FaLinkedin className="w-8 h-8" />
+            </a>
+            <a
+              href="https://x.com/abhiswant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-white transition-colors transform hover:scale-110 duration-300"
+            >
+              <FaTwitter className="w-8 h-8" />
             </a>
           </motion.div>
 
